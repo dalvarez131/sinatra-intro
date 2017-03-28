@@ -1,0 +1,9 @@
+<h1>Notes</h1>
+<ul>
+<% @notes.each do |nota| %>
+  <li><a href="/notes/<%= nota.id %>"><strong><%= nota.title%>:</strong></a><%= nota.content%></li>
+<% end %>
+</ul>
+
+
+<a href="/notes/crear">Crea una Nota</a>

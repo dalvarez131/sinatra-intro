@@ -1,0 +1,17 @@
+<h1>Nota Nueva</h1>
+
+<% if @errors %>
+  <h3>Su nota es invalida</h3>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<form action="/notes" method="POST">
+  <input type="text" placeholder="Titulo" name="note[title]">
+  <input type="text" placeholder="Contenido" name="note[content]">
+  <input type="submit" value="Submit">
+</form>

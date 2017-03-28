@@ -1,0 +1,18 @@
+<h1>Editar Nota</h1>
+
+<% if @errors %>
+  <h3>Edicion Invalida</h3>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<form action="/notes/<%= @nota.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="text" placeholder="Titulo" name="nota[title]" value="<%= @nota.title %>">
+  <input type="text" placeholder="Contenido" name="nota[content]" value="<%= @nota.content %>">
+  <input type="submit" value="Submit">
+</form>
